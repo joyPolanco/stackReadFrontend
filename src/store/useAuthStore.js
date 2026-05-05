@@ -63,7 +63,7 @@ sendGoogleCredential: async (credential) => {
 
     } catch (err) {
 
-      console.log(err)
+      console.log(err,"errprrrr")
       toast.error(err.response?.data?.message || "Error en login");
 
     } finally {
