@@ -8,7 +8,6 @@ import { useAuthStore } from "../store/useAuthStore.js";
 const AuthPage = () => {
   const [actualOption, setActualOption] = useState("login");
   const {authUser} = useAuthStore();
-console.log("DEBERIA YENER BVALOR si el check pasa y authuser= res.data", authUser)
   return (
     <div className="w-full h-screen flex font-sans bg-gray-100">
 

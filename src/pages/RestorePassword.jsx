@@ -17,7 +17,6 @@ const RestorePassword = () => {
 
     toast.success(`Se ha enviado un correo a ${email}`);
 
-    console.log(res);
 
   } catch (err) {
     toast.error("Error enviando correo. Intenta de nuevo");

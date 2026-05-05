@@ -44,7 +44,6 @@ deleteBook: async (id) => {
     }));
 
   } catch (err) {
-    console.log(err);
     toast.error("Error al eliminar");
   }
 },
@@ -127,7 +126,6 @@ deleteCollection: async (id) => {
 
     return { success: false };
   } catch (err) {
-    console.log(err);
     toast.error("Error al eliminar colección");
     return { success: false };
   }
@@ -135,9 +133,7 @@ deleteCollection: async (id) => {
 getCollectionLists: async (collectionId) => {
   try {
 
-    console.log("cargarod listas")
     const res = await axiosInstance.get(`/collections/${collectionId}/lists`);
-        console.log("llistas", res)
 
     return res.data;
   } catch (err) {
@@ -201,26 +197,22 @@ const res =await axiosInstance.put(`/books/${id}`, data, {
   },
 });
  if (res.status === 200) {
-      console.log(res.data)
 
   useAppStore.getState().updateBookInState(res.data.book);
   return { success: true };
 }
 
   } catch (err) {
-    console.log("NO DE MODIFICO", err);
     return { success: false };
   }
 },
 
 addListToCollection: async (collectionId, listId) => {
     try {
-              console.log("SE ENVIO")
 
       const res = await axiosInstance.post(`/collections/${collectionId}/lists`, {
         listId
       });
-      console.log("SE ENVIO")
       
       if (res.status === 200) {
         // Recargar listas para actualizar collectionIds

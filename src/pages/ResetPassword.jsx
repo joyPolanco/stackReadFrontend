@@ -70,13 +70,11 @@ const ResetPassword = () => {
       setPassword("");
       setConfirmPassword("");
 
-      // 👇 redirección
       setTimeout(() => {
         navigate("/login");
       }, 1200);
     }
   } catch (err) {
-    console.log(err);
     toast.error("Error al cambiar contraseña");
   } finally {
     setIsSendingRequest(false);

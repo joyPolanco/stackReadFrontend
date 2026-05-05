@@ -38,7 +38,6 @@ const BooksPage = () => {
     setDeleteBookModalOpen(true);
     
   };
-console.log(books)
 
   /* FILTRO */
   let filteredBooks = books || [];

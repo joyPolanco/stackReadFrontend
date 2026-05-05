@@ -34,10 +34,8 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  console.log("APP USER actualizado:", authUser);
 }, [authUser]);
  if (isCheckingAuth) {
-    console.log("Still checking auth, showing PageLoader");
     return (
       <div className="w-screen h-screen">
         <PageLoader />

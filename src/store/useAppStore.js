@@ -22,7 +22,6 @@ export const useAppStore = create((set) => ({
     const res = await axiosInstance.get(`/books/${id}`);
     return res.data;
   } catch (err) {
-    console.log(err);
     toast.error("Error al cargar el libro");
     throw err;
   }
@@ -34,7 +33,6 @@ getBooks: async () => {
     set({ books: res.data.books });
 
   } catch (err) {
-    console.log(err);
     toast.error("Error al cargar libros");
   }
 },
@@ -48,7 +46,6 @@ getLists: async () => {
     set({ lists: res.data.lists });
 
   } catch (err) {
-    console.log(err);
     toast.error("Error al cargar libros");
   }
 },
@@ -65,7 +62,6 @@ getLists: async () => {
     set({ collections: res.data.collections });
 
   } catch (err) {
-    console.log(err);
     toast.error("Error al cargar colecciones");
   }
 },
@@ -144,7 +140,6 @@ updateBookInState: (updatedBook) =>
 
 getListById: async (listId) => {
   try {
-    console.log("intento")
     const res = await axiosInstance.get(`/lists/${listId}/books`);
     return res.data;
   } catch (err) {
@@ -194,7 +189,6 @@ getEntries: async () => {
     set({ entries: res.data.entries });
     return res.data;
   } catch (err) {
-    console.log(err);
     toast.error("Error al cargar entradas");
   }
 }

@@ -113,7 +113,6 @@ const EditProfileModal = () => {
       setEditProfileModalOpen(false);
 
     } catch (error) {
-        console.log(error)
       const res = error.response?.data;
 
       if (res?.errors) {

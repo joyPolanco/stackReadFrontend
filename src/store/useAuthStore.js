@@ -44,7 +44,6 @@ sendGoogleCredential: async (credential) => {
     
 
   } catch (err) {
-    console.log(err);
     toast.error("Error en login con Google");
     set({ authUser: null });
 
@@ -63,7 +62,6 @@ sendGoogleCredential: async (credential) => {
       toast.success("Login exitoso");
 
     } catch (err) {
-      console.log(err);
 
       toast.error(err.response?.data?.message || "Error en login");
 
@@ -84,7 +82,6 @@ sendGoogleCredential: async (credential) => {
     return res.data;
 
   } catch (err) {
-    console.log(err);
 
     const response = err.response?.data;
 
@@ -111,7 +108,6 @@ logout: async () => {
 
     toast.success("Sesión cerrada");
   } catch (err) {
-    console.log(err);
     toast.error("Error al cerrar sesión");
   }
 
@@ -134,7 +130,6 @@ sendResetPasswordRequest: async (email) => {
 
     return res.data;
   } catch (err) {
-    console.log(err);
     throw err;
   }
 },
@@ -147,7 +142,6 @@ checkResetPasswordToken: async (token) => {
 ,
 resetPassword: async(token,password)=>{
   const res = await axiosInstance.post("/auth/reset-password", {token,password});
- console.log(res)
   return res;
 }
 }));
